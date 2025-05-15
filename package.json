@@ -7,7 +7,7 @@
   "scripts": {
     "start": "node src/app.js",
     "dev": "nodemon src/app.js",
-    "test": "mocha test/supertest.test.js"
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
   },
   "keywords": [],
   "author": "",
@@ -24,6 +24,14 @@
   "devDependencies": {
     "@faker-js/faker": "^9.7.0",
     "chai": "^4.3.7",
+    "jest": "^29.7.0",
     "mocha": "^10.1.0"
-  }
+  },
+"jest": {
+  "testEnvironment": "node",
+  "roots": ["src/"],
+  "testMatch": ["**/*.test.js"],
+  "transform": {},
+  "moduleFileExtensions": ["js", "jsx", "json"]
+}
 }
